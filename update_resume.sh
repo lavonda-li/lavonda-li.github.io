@@ -32,8 +32,7 @@ else
         exit 1
     fi
     
-    echo "No file specified. Using most recent file from Downloads:"
-    echo "  $SOURCE_FILE"
+    echo "Using... $(basename "$SOURCE_FILE")"
 fi
 
 # Check if source file exists
@@ -52,7 +51,7 @@ fi
 cp "$SOURCE_FILE" "$TARGET_FILE"
 
 if [ $? -eq 0 ]; then
-    echo "✓ Successfully updated resume at: $TARGET_FILE"
+    echo "✓ Successfully updated resume"
 else
     echo "Error: Failed to copy file"
     exit 1
@@ -90,7 +89,5 @@ else
 fi
 
 # Open the resume URL in browser
-echo ""
-echo "Opening resume in browser..."
 open "https://${GITHUB_USERNAME}.github.io/files/$RESUME_FILENAME"
 

@@ -51,15 +51,14 @@ fi
 cp "$SOURCE_FILE" "$TARGET_FILE"
 
 if [ $? -eq 0 ]; then
-    echo "✓ Successfully updated resume"
+    # echo "✓ Successfully updated resume"
+    :
 else
     echo "Error: Failed to copy file"
     exit 1
 fi
 
 # Git operations
-echo ""
-
 # Change to the repository directory to run git commands
 cd "$SCRIPT_DIR"
 
